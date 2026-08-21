@@ -8,7 +8,6 @@ import { visit } from 'unist-util-visit';
 import type { Root, Element, Text as HastText } from 'hast';
 import { useCallback } from 'react';
 import { PREFIX } from '../utils/Prefix';
-import classes from './ReactMarkdownWrapper.module.css';
 
 // Type guards
 function isHastText(node: unknown): node is HastText {
@@ -78,7 +77,7 @@ export function ReactMarkdownWrapper({ text, required, inline }: { text: string;
       const asteriskNode: Element = {
         type: 'element',
         tagName: 'span',
-        properties: { className: classes.requiredAsterisk },
+        properties: { className: 'required-asterisk' },
         children: [
           {
             type: 'text',
